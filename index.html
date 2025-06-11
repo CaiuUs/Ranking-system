@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Nerdpostagem</title>
+   <link rel="shortcut icon" href="/ranking-nerdpostagem/assets/nerdpostagem.jpg" type="image/x-icon">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div class="login-area" id="login-area">
+      <h1>Login</h1>
+      <input type="text" id="nomeUsuario" placeholder="Digite seu nome" autocomplete="username" />
+      <input type="password" id="senhaUsuario" placeholder="Senha (somente para admin)"
+         autocomplete="current-password" />
+      <button onclick="login()">Entrar</button>
+   </div>
+
+   <div class="logout-area" style="display: none;" id="logout-area">
+      <p>Bem-vindo(a), <strong id="usuarioAtual"></strong>! <button onclick="logout()">Sair</button></p>
+   </div>
+
+   <div id="interface-principal">
+      <div class="tabs" id="abas"></div>
+      <div id="conteudoAbas"></div>
+   </div>
+
+   <div id="admin-interface">
+      <h2>Administração</h2>
+
+      <div class="admin-category-settings">
+         <h3>Gerenciar Nomes das Categorias</h3>
+         <div id="category-name-inputs"></div>
+         <button onclick="salvarNomesCategorias()">Salvar Nomes das Categorias</button>
+      </div>
+
+      <div class="admin-image-settings">
+         <h3>Gerenciar Imagens dos Ranqueados</h3>
+         <label for="selectNomeRanqueado">Selecionar Ranqueado:</label>
+         <select id="selectNomeRanqueado" onchange="mostrarImagemAtualRanqueado()"></select>
+         <div class="current-image-preview">
+            <p>Imagem atual:</p>
+            <img id="imagemAtualRanqueado" src="" alt="Prévia da Imagem" class="foto-perfil">
+         </div>
+         <label for="novaUrlImagem">Nova URL da Imagem:</label>
+         <input type="text" id="novaUrlImagem" placeholder="Cole a nova URL da imagem aqui" />
+         <button onclick="salvarImagemRanqueado()">Salvar Imagem</button>
+      </div>
+
+      <div class="admin-rankings">
+         <h3>Rankings de Todos os Usuários</h3>
+         <div id="todosRankings"></div>
+      </div>
+
+      <div class="admin-rankings">
+         <h2>Ranking Global (Mais Votados)</h2>
+         <div id="rankGlobalConteudo"></div>
+      </div>
+   </div>
+   <script src="script.js"></script>
+
+</body>
+
+</html>
