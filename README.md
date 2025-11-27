@@ -6,3 +6,4 @@ Um sistema de ranking, editável para você conseguirse divertir entre seus amig
 #### JavaScript
 #### HTML
 #### CSS
+#### Supabase
